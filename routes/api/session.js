@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Session = require('../../../models/session');
+const Session = require('../../models/session');
 
 // @route GET api/session
 // @description Gets all sessions 
@@ -33,6 +33,5 @@ router.post('/create', async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 })
-
 
 module.exports = router;
