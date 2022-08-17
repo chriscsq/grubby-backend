@@ -24,5 +24,6 @@
   },
   "engines": {
     "node": "v10.13.0"
-  }
+  },
+  "type": "module"
 }
