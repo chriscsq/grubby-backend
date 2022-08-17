@@ -5,7 +5,6 @@ import randomstring from "randomstring";
 // @access Public
 const getSessions = async (req, res) => {
   try {
-    console.log("get sessions");
     const sessions = await Session.find();
     res.json(sessions);
   } catch (err) {
