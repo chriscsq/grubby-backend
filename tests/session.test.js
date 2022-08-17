@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 describe("SESSION_TEST", () => {
   let connection;
   let db;
-
+  let date;
   const session = mongoose.model(
     "test_sessions",
     mongoose.Schema({
@@ -14,6 +14,7 @@ describe("SESSION_TEST", () => {
       favorites: Array,
       tags: Array,
       price: Array,
+      date: Date,
     })
   );
 
@@ -26,6 +27,7 @@ describe("SESSION_TEST", () => {
       }
     );
     db = mongoose.connection;
+    date = new Date();
     const collection = "test_sessions";
     await db.createCollection(collection);
   });
@@ -43,6 +45,7 @@ describe("SESSION_TEST", () => {
       favorites: [],
       tags: [],
       price: [],
+      date: date,
     });
     await expectedResponse.save();
     expect(expectedResponse.toJSON()).toMatchObject({
@@ -53,6 +56,7 @@ describe("SESSION_TEST", () => {
       favorites: [],
       tags: [],
       price: [],
+      date: date,
     });
   });
 
@@ -67,6 +71,7 @@ describe("SESSION_TEST", () => {
       favorites: [],
       tags: [],
       price: [],
+      date: date,
     });
   });
 });
