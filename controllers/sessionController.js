@@ -1,5 +1,8 @@
 import Session from "../models/session.js";
 import randomstring from "randomstring";
+
+const SESSION_ID_LENGTH = 7;
+
 // @route GET api/session
 // @description Gets all sessions
 // @access Public
@@ -16,8 +19,7 @@ const getSessions = async (req, res) => {
 // @description add/save book
 // @access Public
 const createSession = async (req, res) => {
-  const SESSION_STRING_LENGTH = 7;
-  const randomSessionId = randomstring.generate(SESSION_STRING_LENGTH);
+  const randomSessionId = randomstring.generate(SESSION_ID_LENGTH);
   const session = new Session({
     sessionId: randomSessionId,
     users: req.body.users,

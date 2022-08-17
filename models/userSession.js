@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
+
 const { Schema } = mongoose;
+
 const UserSessionSchema = new Schema({
   userId: {
     type: String,
